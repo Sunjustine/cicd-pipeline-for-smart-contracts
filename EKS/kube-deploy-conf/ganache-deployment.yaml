@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ganache-deployment
+  labels:
+    app: ganache
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ganache
+  template:
+    metadata:
+      labels:
+        app: ganache
+    spec:
+      containers:
+        - name: ganache
+          image: trufflesuite/ganache-cli:latest
+          ports:
+            - containerPort: 8545
+          args: ["--deterministic", "--host", "0.0.0.0"]
+          
+          
