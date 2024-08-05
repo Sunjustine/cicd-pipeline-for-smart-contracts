@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: truffle
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: truffle
+  template:
+    metadata:
+      labels:
+        app: truffle
+    spec:
+      containers:
+      - name: truffle
+        image: your-dockerhub-username/truffle:latest
+        volumeMounts:
+        - mountPath: /home/app
+          name: app-volume
+        - mountPath: /home/app/node_modules
+          name: node-modules-volume
+        ports:
+        - containerPort: 9545
+        command: ["truffle", "develop"]
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "500m"
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8545
+          initialDelaySeconds: 10
+          periodSeconds: 5
+      volumes:
+      - name: app-volume
+        hostPath:
+          path: /path/to/your/app
+          type: Directory
+      - name: node-modules-volume
+        hostPath:
+          path: /path/to/your/app/node_modules
+          type: Directory

@@ -8,12 +8,12 @@ variable "public_subnets" {
   type        = list(string)
 }
 
-# variable "vpc_id" {
-#   description = "value"
-#   type = string
-# }
-
 variable "instance_type" {
   description = "Instance type"
+  type        = string
+}
+
+variable "aws_region" {
+  description = "aws default region"
   type        = string
 }
