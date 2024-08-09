@@ -1,3 +1,8 @@
+# 
+# Create S3 bucket for eks cluster to save TF state
+#
+
+
 terraform {
   backend "s3" {
     bucket = "terraform-eks-cicd-bucket"

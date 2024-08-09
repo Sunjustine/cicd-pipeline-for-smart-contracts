@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# This script is a simple Bash script designed to manage Terraform 
+# infrastructure by either creating or destroying it based on the command-line 
+# argument provided when the script is executed. 
+#
 
 # Function to create the Terraform infrastructure
 create_infra() {

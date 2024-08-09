@@ -6,6 +6,8 @@
 # Update packages
 sudo apt-get update -y;
 
+sudo apt install -y awscli;
+
 # Docker installation
 sudo apt install -y docker.io;
 
