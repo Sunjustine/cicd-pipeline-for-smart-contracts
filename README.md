@@ -41,7 +41,7 @@ We use Terraform to set up the infrastructure, which includes initializing a VPC
 5. Apply the infrastructure plan to provision the Jenkins server:
 
     ```sh
-    terraform apply ./truffle-project
+    terraform apply "./plan.tfplan"
     ```
 
 You can automate the creation or destruction of the infrastructure using the `jenkins_infrastructure.sh` script with values `destroy` and `create`.
