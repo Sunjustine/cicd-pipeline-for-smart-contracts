@@ -1,4 +1,4 @@
-FROM node:16-bullseye-slim as base
+FROM node:18-bullseye-slim as base
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
