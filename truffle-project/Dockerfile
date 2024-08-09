@@ -14,8 +14,8 @@ FROM base as truffle
 RUN mkdir -p /home/app
 WORKDIR /home/app
 
-# COPY package.json /home/app
-# COPY package-lock.json /home/app
+COPY package.json /home/app
+COPY package-lock.json /home/app
 
 RUN npm install --quiet
 
