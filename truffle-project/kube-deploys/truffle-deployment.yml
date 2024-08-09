@@ -39,9 +39,9 @@ spec:
       volumes:
       - name: app-volume
         hostPath:
-          path: /path/to/your/app
+          path: /home/app
           type: Directory
       - name: node-modules-volume
         hostPath:
-          path: /path/to/your/app/node_modules
+          path: /home/app/node_modules
           type: Directory
