@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ganache
-        image: your-dockerhub-username/ganache:latest
+        image: sunjustine/ganache:latest
         ports:
         - containerPort: 8545
         resources:
@@ -24,16 +24,5 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "1000m"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: ganache-service
-spec:
-  selector:
-    app: ganache
-  ports:
-  - protocol: TCP
-    port: 8545
-    targetPort: 8545
-  type: ClusterIP
+
+
